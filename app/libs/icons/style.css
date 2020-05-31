@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'icon';
+  src:  url('../../fonts/Icons/icomoon.eot?2ooxdz');
+  src:  url('../../fonts/Icons//icomoon.eot?2ooxdz#iefix') format('embedded-opentype'),
+    url('../../fonts/Icons//icomoon.ttf?2ooxdz') format('truetype'),
+    url('../../fonts/Icons//icomoon.woff?2ooxdz') format('woff'),
+    url('../../fonts/Icons//icomoon.svg?2ooxdz#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-down:before {
+  content: "\e908";
+}
+.icon-arrow-up:before {
+  content: "\e909";
+}
+.icon-phone:before {
+  content: "\e90a";
+}
+.icon-search:before {
+  content: "\e907";
+}
+.icon-arrow-left:before {
+  content: "\e900";
+}
+.icon-arrow-right:before {
+  content: "\e901";
+}
+.icon-checkmark:before {
+  content: "\e902";
+}
+.icon-close:before {
+  content: "\e903";
+}
+.icon-left:before {
+  content: "\e904";
+}
+.icon-location:before {
+  content: "\e905";
+}
+.icon-right:before {
+  content: "\e906";
+}
