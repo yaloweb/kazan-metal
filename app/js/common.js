@@ -52,11 +52,48 @@ $(function() {
 		thumbheight: 56
 	});
 
-	$('.testimonials').owlCarousel({
+  let testimonials = $('.testimonials');
+  let photosGallery = $('.photos-gallery');
+	testimonials.owlCarousel({
 		items: 1,
-		nav: true,
-		dots: false
+		nav: false,
+		dots: false,
+    touchDrag: false,
+    mouseDrag: false
 	});
+  photosGallery.owlCarousel({
+    items: 1,
+    nav: false,
+    dots: false,
+    touchDrag: false,
+    mouseDrag: false
+  })
+
+  $('.testimonials-nav-left').on('click', function() {
+    testimonials.trigger('prev.owl.carousel', [300]);
+    photosGallery.trigger('prev.owl.carousel', [300]);
+    checkNavTestimonials()
+  });
+
+  $('.testimonials-nav-right').on('click', function() {
+    testimonials.trigger('next.owl.carousel', [300]);
+    photosGallery.trigger('next.owl.carousel', [300]);
+    checkNavTestimonials()
+  });
+
+  function checkNavTestimonials() {
+    let activeIndex = $('.testimonials .owl-item.active').index() + 1;
+    if ( activeIndex == 1 ) {
+      $('.testimonials-nav-left').addClass('disabled')
+    }
+    else if ( activeIndex == $('.testimonials .owl-item').length ) {
+      $('.testimonials-nav-right').addClass('disabled')
+    }
+    else if ( activeIndex !== 1 && activeIndex !== $('.testimonials .owl-item').length ) {
+      $('.testimonials-nav-left').removeClass('disabled')
+      $('.testimonials-nav-right').removeClass('disabled')
+    }
+  }checkNavTestimonials();
 
 	$('.phone-mask').inputmask({
   	mask: "+7 (999) 999-99-99",
@@ -153,6 +190,23 @@ $(function() {
   		title.toggleClass('opened');
   		body.slideToggle(300)
   	});
+  });
+
+  $('.select-style').select2({
+    minimumResultsForSearch: -1
+  });
+
+  $('.gallery-img').on('click', function(e) {
+    e.preventDefault();
+    let $fotoramaGallery = $('.gallery-fullscreen').fotorama(),
+        gallery = $fotoramaGallery.data('fotorama'),
+        index = $(this).parent().index();
+    gallery.setOptions({
+      nav: false,
+      allowFullscreen: true,
+    });
+    gallery.requestFullScreen()
+    gallery.show(index)
   });
 
 });

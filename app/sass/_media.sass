@@ -14,12 +14,26 @@
 		.owl-dots
 			left: 30px
 			right: 30px
+	.conditions-descr
+		max-width: none
+	.check-other .catalog-item
+		margin-right: 0
+	.s-check-other
+		padding-right: 0
 @media (max-width: 1365.98px)
 	.banner-item
 		background-position: top 50% right -170px
 		padding-left: 0
 	.banners-carousel .owl-nav .owl-prev
 		left: 30px
+	.catalog-item
+		margin-right: 0
+	.adv-item
+		margin-right: 0
+	.prod-item
+		padding-left: 20px
+		padding-right: 20px
+
 // ≥1200px
 +media-breakpoint-down(lg)
 	body
@@ -33,7 +47,8 @@
 		display: inline-flex
 	.close-menu
 		display: inline-flex
-
+	.product-additional-info
+		padding-right: 0
 // ≥992px
 +media-breakpoint-down(md)
 	.container
@@ -50,13 +65,37 @@
 		padding-left: 0
 	.prod-item
 		padding: 20px 20px 30px 20px
-	.testimonials
+	.testimonials-block
 		padding: 20px 20px 55px
+	.testimonials
 		.owl-nav
 			bottom: 20px
 			left: 20px
 	.info-item
 		padding: 20px
+	.catalog-land
+		.row
+			margin: 0 -10px
+			[class*=col-]
+				padding: 0 10px
+				margin-bottom: 20px
+	.conditions-row
+		[class*=col-]
+			margin-bottom: 20px
+	.gallery-thumbs-nav
+		a
+			color: #fff !important
+	.gallery-thumbs-prev-btn
+		left: 5px
+	.gallery-thumbs-next-btn
+		right: 5px
+	.product-images
+		margin-bottom: 20px
+	.adv-item
+		padding: 30px 20px !important
+		flex-direction: column !important
+		.adv-icon
+			margin: 22px 22px 33px !important
 // ≥768px
 +media-breakpoint-down(sm)
 	.header-location
@@ -92,12 +131,13 @@
 				max-width: none
 	.testimonials-row
 		display: block
-	.testimonials
+	.testimonials-block
 		max-width: none
 		border-radius: 0
+	.testimonials
 		.owl-nav
 			justify-content: space-between
-	.photos
+	.photos-gallery
 		max-width: none
 	.gallery-col
 		flex: 0 0 50%
@@ -117,8 +157,42 @@
 	.footer-left
 		max-width: none
 		flex: none
+	.characters-block
+		flex-wrap: wrap
+	.characters-img
+		position: static
+		order: 1
+		height: auto
+	.characters-left
+		order: 2
+		display: block
+		padding-right: 10px
+	.characters-right
+		order: 3
+		padding-left: 10px
+	.characters-item
+		max-width: none !important
+	.getting-item
+		flex: 0 0 50%
+		max-width: 50%
+		&:nth-child(2)
+			&:after
+				border-radius: 0 5px 0 0
+		&:nth-child(3)
+			&:after
+				border-radius: 0
+		&:nth-last-child(2)
+			&:after
+				border-radius: 0 0 0 5px
+		&:nth-last-child(3)
+			&:after
+				border-radius: 0
 // ≥576px
 +media-breakpoint-down(xs)
+	.h1
+		font-size: 21px
+	.h2
+		font-size: 18px
 	.header-top
 		display: none
 	.header-main
@@ -460,6 +534,115 @@
 		display: none
 	.footer-copyright
 		margin-bottom: 20px
+	.catalog-item
+		margin-bottom: 20px
+	.adv-row
+		[class*=col]
+			margin-bottom: 20px
+	.adv-item
+		padding: 20px
+		align-items: center
+		text-align: center
+	.page-banner-content .h1
+		font-size: 21px
+	.prod-buy
+		.btn
+			padding: 0 10px
+			span
+				display: none
+	.price
+		font-size: 16px
+	.prod-buy .price
+		margin-right: 15px
+	.getting-item
+		flex: 0 0 100%
+		max-width: 100%
+		&:first-child
+			&:after
+				border-radius: 5px 5px 0 0
+		&:last-child
+			&:after
+				border-radius: 0 0 5px 5px
+		&:nth-child(2)
+			&:after
+				border-radius: 0
+		&:nth-last-child(2)
+			&:after
+				border-radius: 0
+	.s-order-banner
+		padding-top: 20px
+	.order-banner
+		padding: 30px 20px
+		.h2
+			font-size: 18px
+	.characters-left,
+	.characters-right
+		max-width: 100%
+		flex: 0 0 100%
+		text-align: center
+	.characters-item
+		margin-bottom: 20px !important
+	.s-callback-2
+		padding-bottom: 30px
+	.prod-buy
+		justify-content: space-between
+	.product-images
+		.prod-sticks
+			top: 10px
+			left: 10px
+		.stick-1
+			width: 54px
+			height: 27px
+			line-height: 27px
+			font-size: 12px
+		.stick-2
+			height: 27px
+			line-height: 25px
+			font-size: 12px
+			padding: 0 7px
+	.product-tabs-nav
+		overflow-x: auto
+	.product-tabs-nav:after
+		width: 100%
+	.product-tabs-nav-link
+		margin-right: 20px
+		font-size: 12px
+	.select-item
+		.select2-container
+			max-width: none
+			width: 100%
+	.select-item-title
+		margin-bottom: 5px
+	.product-price
+		margin-bottom: 5px
+	.product-economy
+		width: 100%
+	.product-btns
+		flex-direction: column
+		justify-content: stretch
+		.btn
+			margin: 0 0 10px
+			width: 100%
+			flex: none
+			max-width: none
+			&:last-child
+				margin-bottom: 0
+	.questions-item-title
+		padding: 10px 70px 10px 10px
+		font-size: 12px
+		&:after
+			font-size: 10px
+			right: 10px
+			top: 50%
+			margin-top: -5px
+	.s-product-contacts
+		padding-bottom: 0
+	.callback-block-type-2
+		background-position: top 50% right -280px
+	.testimonials-nav
+		justify-content: space-between
+	.testimonials-nav-button
+		margin: 0
 @media (max-width: 420px)
 	.prod-btns
 		display: block
@@ -469,6 +652,8 @@
 			margin-bottom: 12px
 			display: block
 			max-width: none
+	.navbar-footer-callback
+		margin-left: 0
 @media (max-width: 360px)
 	.btn
 		width: 100%
