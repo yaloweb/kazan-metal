@@ -88,6 +88,7 @@
 				<nav class="navbar-footer-menu">
 					<a href="#">О компании</a>
 					<a href="#">Отзывы</a>
+					<a href="#">Сертификаты</a>
 					<a href="#">Контакты</a>
 				</nav>
 			</div>
@@ -95,7 +96,7 @@
 			<div class="navbar-footer">
 				<div class="navbar-location">
 					<div class="h5">Наш адрес:</div>
-					<p>г. Казань, ул. Магистральная, д. 86</p>
+					<p><a href="#cities" class="open-popup">г. Казань, ул. Магистральная, д. 86</a></p>
 				</div>
 				<div class="navbar-phone">
 					<a href="tel:+7 (843) 214-41-47" class="navbar-phone-link">+7 (843) 214-41-47</a>
@@ -104,7 +105,7 @@
 					<li>пн-пт 8:00 — 20:00</li>
 					<li>сб-вс 9:00 — 18:00</li>
 				</ul>
-				<a href="#" class="btn navbar-footer-callback">Заказать звонок</a>
+				<a href="#callback" class="btn navbar-footer-callback open-popup">Заказать звонок</a>
 			</div>
 
 		</div>
@@ -262,6 +263,7 @@
 						<a href="#">Каталог</a>
 						<a href="#">О компании</a>
 						<a href="#">Отзывы</a>
+						<a href="#">Сертификаты</a>
 						<a href="#">Контакты</a>
 					</nav>
 				</div>
@@ -295,14 +297,14 @@
 						<div class="header-location">
 							<div class="location-street">
 								<span class="icon-location"></span>
-								<p>г. Казань, ул. Магистральная, 86</p>
+								<p><a href="#cities" class="open-popup">г. Казань, ул. Магистральная, 86</a></p>
 							</div>
 							<div class="location-time">пн-пт 8:00 — 20:00; сб-вс 9:00 — 18:00</div>
 						</div>
 
 						<div class="header-phone">
 							<a href="tel:+7 (843) 214-41-47" class="phone-link">+7 (843) 214-41-47</a>
-							<a href="#" class="btn btn-border">Заказать звонок</a>
+							<a href="#callback" class="btn btn-border open-popup">Заказать звонок</a>
 						</div>
 
 						<div class="header-open-search">
@@ -678,7 +680,7 @@
 					<a href="#" class="btn btn-icon btn-shadow">Читать все отзывы<span class="icon-arrow-right"></span></a>
 				</div>
 				<div class="add-testimonials-link">
-					<a href="#">Добавить свой отзыв</a>
+					<a href="#testimonial" class="open-popup">Добавить свой отзыв</a>
 				</div>
 
 			</div>
@@ -805,7 +807,7 @@
 				
 				<div class="order-form">
 					<div class="h2">Закажите теплицы, заборы и другие конструкции из металла ДИСТАНЦИОННО!</div>
-					<a href="#" class="btn">Заказать</a>
+					<a href="#callback" class="btn open-popup">Заказать</a>
 				</div>
 
 			</div>
@@ -851,6 +853,7 @@
 							<a href="#">Каталог товаров</a>
 							<a href="#">О компании</a>
 							<a href="#">Отзывы</a>
+							<a href="#">Сертификаты</a>
 							<a href="#">Контакты</a>
 						</nav>
 						<div class="footer-sec-nav">
@@ -869,6 +872,88 @@
 			</div>
 		</footer>
 
+	</div>
+
+	<div class="popup-wrapper" id="callback">
+		<div class="popup-flex">
+			<div class="popup-block">
+				<div class="popup-close"></div>
+				<div class="popup-content">
+					<form class="main-form">
+						<div class="h3">Заказать звонок</div>
+						<div class="form-group">
+							<label class="form-label">Ваше имя<span>*</span></label>
+							<input type="text" class="form-control is-required" placeholder="Ваше имя" required>
+						</div>
+						<div class="form-group">
+							<label class="form-label">Ваш телефон<span>*</span></label>
+							<input type="text" class="form-control phone-mask" placeholder="+7 (999) 999-99-99" required>
+						</div>
+						<div class="form-submit">
+							<button type="submit" class="btn">Отправить заявку</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="popup-bg"></div>
+		</div>
+	</div>
+
+	<div class="popup-wrapper" id="testimonial">
+		<div class="popup-flex">
+			<div class="popup-block">
+				<div class="popup-close"></div>
+				<div class="popup-content">
+					<form class="main-form">
+						<div class="h3">Оставить отзыв</div>
+						<div class="form-group">
+							<label class="form-label">Ваше имя<span>*</span></label>
+							<input type="text" class="form-control" placeholder="Ваше имя" required>
+						</div>
+						<div class="form-group">
+							<label class="form-label">Ваш телефон<span>*</span></label>
+							<input type="text" class="form-control phone-mask" placeholder="+7 (999) 999-99-99" required>
+						</div>
+						<div class="form-group">
+							<label class="form-label">Ваш отзыв<span>*</span></label>
+							<textarea class="form-control" placeholder="Ваш отзыв"></textarea>
+						</div>
+						<div class="form-submit">
+							<button type="submit" class="btn">Оставить отзыв</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="popup-bg"></div>
+		</div>
+	</div>
+
+	<div class="popup-wrapper" id="cities">
+		<div class="popup-flex">
+			<div class="popup-block">
+				<div class="popup-close"></div>
+				<div class="popup-content">
+					<form class="main-form">
+						<div class="h3">Выберите город из списка</div>
+						<ul class="cities-list">
+							<li class="city"><a href="#">Казань</a></li>
+							<li class="city"><a href="#">Москва</a></li>
+							<li class="city"><a href="#">Казань</a></li>
+							<li class="city"><a href="#">Москва</a></li>
+							<li class="city"><a href="#">Казань</a></li>
+							<li class="city"><a href="#">Москва</a></li>
+							<li class="city"><a href="#">Казань</a></li>
+							<li class="city"><a href="#">Москва</a></li>
+							<li class="city"><a href="#">Казань</a></li>
+							<li class="city"><a href="#">Москва</a></li>
+							<li class="city"><a href="#">Казань</a></li>
+							<li class="city"><a href="#">Москва</a></li>
+						</ul>
+					</form>
+				</div>
+			</div>
+			<div class="popup-bg"></div>
+		</div>
 	</div>
 
 	<script src="js/scripts.min.js"></script>

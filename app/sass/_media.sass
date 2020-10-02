@@ -39,15 +39,18 @@
 	body
 		padding-left: 0
 	.navbar
-		left: -100%
-		transition: left .3s ease
+		left: auto
+		right: 100%
+		transition: transform .3s ease
 		&.visible
-			left: 0
+			transform: translateX(100%)
 	.menu-btn
 		display: inline-flex
 	.close-menu
 		display: inline-flex
 	.product-additional-info
+		padding-right: 0
+	.s-catalog
 		padding-right: 0
 // ≥992px
 +media-breakpoint-down(md)
@@ -93,9 +96,9 @@
 		margin-bottom: 20px
 	.adv-item
 		padding: 30px 20px !important
-		flex-direction: column !important
-		.adv-icon
-			margin: 22px 22px 33px !important
+	.adv-icon
+		img
+			height: 57px
 // ≥768px
 +media-breakpoint-down(sm)
 	.header-location
@@ -137,7 +140,8 @@
 	.testimonials
 		.owl-nav
 			justify-content: space-between
-	.photos-gallery
+	.photos-gallery,
+	.testimoinal-gallery
 		max-width: none
 	.gallery-col
 		flex: 0 0 50%
@@ -187,6 +191,18 @@
 		&:nth-last-child(3)
 			&:after
 				border-radius: 0
+	.about-content
+		max-width: none
+	.contacts-row .contacts-item
+		font-size: 14px
+		ul li
+			font-size: 14px
+	.adv-item
+		display: block
+	.adv-icon
+		margin: 0 0 20px !important
+		img
+			width: 37px
 // ≥576px
 +media-breakpoint-down(xs)
 	.h1
@@ -297,10 +313,11 @@
 	.navbar-dropdown
 		z-index: 5
 		padding-top: 25px
-		left: -200%
+		right: 120%
+		left: auto
 		width: 100%
 		&.opened
-			left: 0
+			transform: translateX(120%)
 	.close-dropdown
 		top: 26px
 		right: 27px
@@ -643,6 +660,20 @@
 		justify-content: space-between
 	.testimonials-nav-button
 		margin: 0
+	.partner-table
+		display: block
+		width: 100%
+		tr
+			display: block
+			margin-bottom: 10px
+		td
+			display: block
+			padding: 0 !important
+	.main-contacts-content
+		padding-left: 10px
+		padding-right: 10px
+	.city
+		width: 50%
 @media (max-width: 420px)
 	.prod-btns
 		display: block

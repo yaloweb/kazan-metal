@@ -181,6 +181,9 @@ b, strong
 		color: #707070
 		font-size: 13px
 		margin-bottom: 14px
+		a
+			color: inherit !important
+			text-decoration: none !important
 
 .site-header
 	position: relative
@@ -193,7 +196,7 @@ b, strong
 	border-radius: 4px
 	outline: none !important
 	border: none
-	box-shadow: none
+	box-shadow: nonecccccc
 	cursor: pointer
 	background-color: $accent
 	transition: $time
@@ -222,6 +225,15 @@ b, strong
 .btn-shadow
 	box-shadow: 0px 5px 15px rgba(4, 94, 0, 0.33)
 
+.btn-red
+	background-color: #f25a50 !important
+	&:hover
+		background-color: #ff3023 !important
+
+.btn-red-shadow
+	box-shadow: 0 5px 15px #dcacb8
+
+
 .btn-icon
 	display: inline-flex
 	align-items: center
@@ -244,6 +256,7 @@ b, strong
 	padding: 62px 22px 20px 20px
 	overflow-y: auto
 	transition: $time
+	transform: translateX(0)
 	&::-webkit-scrollbar
 		width: 3px
 		height: 3px
@@ -254,7 +267,7 @@ b, strong
 	h4, .h4
 		margin-bottom: 40px
 	&.opened
-		left: 277px
+		transform: translateX(277px)
 
 .close-dropdown
 	position: absolute
@@ -278,9 +291,9 @@ b, strong
 		margin-bottom: 0
 
 .container
-	max-width: none!important
-	padding-left: 40px
-	padding-right: 165px
+	padding-left: 60px
+	padding-right: 60px
+	max-width: 1200px
 	margin: 0
 
 .header-top
@@ -367,6 +380,9 @@ b, strong
 			bottom: 0
 			height: 1px
 			border-bottom: 1px dashed #9B9B9B
+	a
+		text-decoration: none !important
+		color: inherit !important
 
 .location-time
 	font-size: 11px
@@ -402,7 +418,7 @@ b, strong
 	background-repeat: no-repeat
 	background-position: top 50% right 0
 	min-height: 429px
-	padding-left: 67px
+	// padding-left: 67px
 
 .banner-item-content
 	max-width: 70%
@@ -792,7 +808,8 @@ section
 		text-decoration: underline
 		color: #5C5C5C
 
-.photos-gallery
+.photos-gallery,
+.testimoinal-gallery
 	max-width: 56%
 	flex: 0 0 56%
 	position: relative
@@ -985,6 +1002,10 @@ section
 		padding: 0
 		margin: 0
 		font-size: 13px
+	img
+		height: 40px
+		margin-bottom: 10px
+
 .build-route
 	margin-top: 4px
 	font-size: 13px
@@ -1303,10 +1324,11 @@ section
 .breadcrumbs
 	ul
 		list-style-type: none
-		margin: 0
+		margin: 0 -15px 0 0
 		padding: 0
 		display: flex
-		flex-wrap: nowrap
+		flex-wrap: wrap
+		white-space: nowrap
 		li
 			position: relative
 			font-size: 13px
@@ -1404,57 +1426,23 @@ section
 	align-items: flex-start
 	&.main
 		flex-direction: row
+		align-items: center
 		padding: 29px 176px 29px 30px
 		.adv-icon
-			margin: 22px 51px 22px 22px
+			margin: 0 51px 0 0
 	&.green
-		background-color: #E3F97B
+		background-color: rgba(#E3F97B, .4)
 	&.yellow
-		background-color: #FBFB95
+		background-color: rgba(#FBFB95, .4)
 	&.blue
-		background-color: #B2EFF5
+		background-color: rgba(#B2EFF5, .4)
 	&.purple
-		background-color: #F9B5DF
-		box-shadow: none
+		background-color: rgba(#F9B5DF, .4)
 
 .adv-icon
-	display: flex
-	align-items: center
-	justify-content: center
-	width: 60px
-	height: 60px
-	background-color: $accent
-	border-radius: 50%
-	margin-bottom: 28px
-	position: relative
-	margin: 22px 22px 33px
-	&:after
-		content: ''
-		position: absolute
-		width: 104px
-		height: 104px
-		border-radius: 50%
-		background-color: rgba(#21AA1B, .3)
-		left: 50%
-		top: 50%
-		margin-left: -52px
-		margin-top: -52px
-		z-index: 0
-	&:before
-		content: ''
-		position: absolute
-		width: 84px
-		height: 84px
-		border-radius: 50%
-		left: 50%
-		top: 50%
-		margin-left: -42px
-		margin-top: -42px
-		background-color: rgba(#21AA1B, .4)
-		z-index: 1
+	margin-bottom: 33px
 	img
-		width: 37px
-		height: auto
+		height: 74px
 		position: relative
 		z-index: 2
 
@@ -2100,6 +2088,9 @@ section
 	overflow: hidden
 	.fotorama__nav-wrap
 		display: none !important
+	&.no-transition
+		.fotorama__wrap--css3 .fotorama__nav__shaft, .fotorama__wrap--css3 .fotorama__stage__shaft, .fotorama__wrap--css3 .fotorama__thumb-border
+			transition-duration: 0s !important
 
 .fotorama__fullscreen-icon
 	text-align: center
@@ -2121,4 +2112,256 @@ section
 		border-radius: 8px !important
 	.catalog-item-img
 		border-radius: 8px 8px 0 0
+
+.popup-wrapper
+	position: fixed
+	z-index: 200
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	display: none
+	&.opened
+		.popup-block
+			transform: translateY(0)
+			opacity: 1
+		.popup-bg
+			opacity: 1
+
+.popup-flex
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	display: flex
+	align-items: center
+	justify-content: center
+	padding: 0 10px
+
+.popup-bg
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: rgba(#000, .5)
+	transition: $time
+	opacity: 0
+	z-index: 0
+
+.popup-block
+	position: relative
+	z-index: 1
+	border-radius: 5px
+	overflow-y: auto
+	width: 500px
+	max-width: 100%
+	max-height: 100%
+	background-color: #fff
+	overflow-x: hidden
+	transition: $time
+	transform: translateY(-20px)
+	opacity: 0
+
+.popup-close
+	position: absolute
+	top: 20px
+	right: 20px
+	width: 18px
+	height: 18px
+	line-height: 18px
+	text-align: center
+	cursor: pointer
+	transition: $time
+	opacity: .6
+	&:hover
+		opacity: 1
+	&:before
+		content: '\e903'
+		font-family: icon
+		color: #000
+		font-size: 18px
+
+.popup-content
+	padding: 30px
+
+.main-form
+	.h3
+		font-size: 21px
+		margin-bottom: 20px
+		text-align: center
+
+.form-group
+	margin-bottom: 15px
+
+.form-label
+	display: block
+	margin-bottom: 5px
+	font-size: 13px
+	color: #6e6e6e
+	span
+		margin-left: 4px
+		color: red
+
+.form-control
+	width: 100%
+	height: 44px
+	background-color: #F4F4F4
+	border: 1px solid #EEEEEE
+	border-radius: 4px
+	padding: 0 15px
+	transition: $time
+	&.is-required
+		border-color: #ff7373
+		background-color: #ffebeb
+
+textarea.form-control
+	padding-top: 11px
+	height: 150px
+
+.form-submit
+	margin-top: 20px
+	.btn
+		width: 100%
+		height: 44px
+		line-height: 44px
+
+.s-about
+	padding: 63px 0
+	background-image: url(../img/banner.jpg)
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center
+
+.about-content
+	max-width: 70%
+	.h1
+		margin-bottom: 30px
+
+.about-content-callback
+	margin-top: 30px
+	.btn
+		height: 50px
+		line-height: 50px
+		padding: 0 60px
+
+.sertificates
+	position: relative
+	.owl-nav
+		button
+			top: 50%
+			margin-top: -18px
+		.owl-prev
+			left: 10px
+		.owl-next
+			right: 10px
+	.owl-dots
+		bottom: -20px
+		left: 0
+		right: 0
+		.owl-dot
+			background-color: #ddd !important
+			&.active
+				background-color: $accent !important
+
+.full-image-popup
+	.popup-block
+		width: 660px
+	.popup-content
+		padding: 0
+
+.full-umage-popup-src
+	width: 100%
+
+.sertificate-item
+	img
+		width: 100%
+
+.sertificates-row
+	[class*=col-]
+		margin-bottom: 20px
+
+.s-testimonials-page
+	.testimonials-row
+		margin-bottom: 20px
+
+.main-contacts
+	background-color: #fff
+	box-shadow: 0 4px 10px rgba(0,0,0,.1)
+
+.main-contacts-content
+	padding: 30px
+	.contacts-descr
+		border-top: none
+		padding-top: 0
+
+.contacts-row
+	margin-top: 30px
+	margin-bottom: 30px
+	.contacts-item
+		font-size: 18px
+		ul
+			li
+				font-size: 18px
+
+.contacts-descr
+	border-top: 1px solid #ddd
+	padding-top: 40px
+	p
+		font-size: 14px
+		line-height: 1.65
+
+.contacts-main-map
+	.map-container
+		height: 300px
+
+.partner-card
+	margin-top: 20px
+
+.partner-ul
+	list-style-type: none
+	padding: 0
+	margin: 0
+	li
+		font-size: 14px
+		margin-bottom: 5px
+		color: #919191
+		display: flex
+		span
+			color: #000
+
+.partner-table
+	td
+		padding: 5px 0
+		vertical-align: top
+		&:first-child
+			color: #919191
+			padding-right: 20px
+	
+.cities-list
+	display: flex
+	flex-wrap: wrap
+	list-style-type: none
+	padding: 0
+	margin: 35px 0 0
+
+.city
+	margin: 0 0 10px
+	font-size: 16px
+	width: 33.33333%
+	a
+		display: inline-flex
+		align-items: flex-start
+		color: $text
+		text-decoration: none !important
+		transition: $time
+		&:hover
+			color: $accent
+		&:before
+			content: "\e905"
+			font-family: icon
+			color: $accent
+			margin-right: 5px
+
 @import "media" // Always at the end
