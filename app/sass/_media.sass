@@ -322,23 +322,23 @@
 		top: 26px
 		right: 27px
 	.banner-item
-		padding-top: 46px
-		padding-bottom: 59px
+		padding-top: 35px
+		padding-bottom: 35px
 	.banner-item-content
 		.h2, h2
-			font-size: 20px
+			font-size: 18px
 			margin-bottom: 20px
 	.banner-info
 		flex-wrap: wrap
 	.banner-info-item
-		max-width: 50%
 		padding-left: 0
 		padding-top: 38px
-		&:last-child
-			max-width: 100%
+		font-size: 12px
 		.btn
 			height: 45px
 			line-height: 45
+	.banner-item
+		min-height: 380px
 	.banners-carousel
 		margin-bottom: 20px
 	.section-title
@@ -674,6 +674,19 @@
 		padding-right: 10px
 	.city
 		width: 50%
+	.product-images-gallery
+		&.fotorama--fullscreen
+			.fotorama__nav-wrap
+				display: none !important
+	.wrapper
+		padding-top: 63px
+	.site-header
+		position: fixed
+		z-index: 50
+		top: 0
+		left: 0
+		width: 100%
+		background-color: #fff
 @media (max-width: 420px)
 	.prod-btns
 		display: block

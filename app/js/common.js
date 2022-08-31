@@ -151,7 +151,9 @@ $(function() {
 		nav: 'thumbs',
 		thumbmargin: 14,
 		thumbwidth: 72,
-		thumbheight: 74
+		thumbheight: 74,
+    allowfullscreen: true,
+    click: false
 	});
 
   let productImagesFotorama = $productImages.data('fotorama');
@@ -163,6 +165,10 @@ $(function() {
   $('.gallery-thumbs-next-btn').on('click', function(e) {
   	e.preventDefault();
   	productImagesFotorama.show('>');
+  });
+
+  $('.product-images-gallery').on('click', '.fotorama__stage__frame', function() {
+    productImagesFotorama.requestFullScreen();
   });
 
   function checkNavGallery() {

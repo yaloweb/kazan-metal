@@ -55,12 +55,13 @@ b, strong
 	width: 277px
 	z-index: 100
 	background-color: #fff
+	height: 100%
 
 .wrapper
 	overflow: hidden
 
 .navbar-block
-	height: 100vh
+	height: 100%
 	display: flex
 	flex-direction: column
 	position: relative
@@ -84,6 +85,9 @@ b, strong
 	h3, .h3
 		padding: 0 27px
 		margin-bottom: 18px
+		a
+			color: inherit !important
+			text-decoration: none !important
 
 .catalog-nav
 	flex-grow: 1
@@ -628,6 +632,10 @@ section
 	color: $accent
 	margin-right: 12px
 	white-space: nowrap
+	.from
+		font-size: 14px
+		margin-right: 5px
+		color: #8f8f8f
 
 .old-price
 	text-decoration: line-through
@@ -813,6 +821,10 @@ section
 	max-width: 56%
 	flex: 0 0 56%
 	position: relative
+
+.photos-gallery
+	min-height: 100%
+	max-height: 470px
 
 .fotorama__nav-wrap
 	position: absolute
@@ -1292,6 +1304,11 @@ section
 	color: #707070
 	padding-left: 32px
 
+.navbar-menu-all
+	margin-top: 30px
+	.btn
+		width: 100%
+
 .tabs-nav-mob-active
 	display: none
 	height: 41px
@@ -1731,6 +1748,43 @@ section
 
 .product-images-gallery
 	max-width: none
+	&:not(.fotorama--fullscreen)
+		.fotorama__fullscreen-icon
+			opacity: 0 !important
+		.fotorama__stage__frame
+			cursor: pointer
+			&:hover
+				&:before
+					opacity: 1
+				&:after
+					opacity: 1
+					transform: scale(1)
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				background-color: rgba(#000, .5)
+				z-index: 1
+				transition: $time
+				opacity: 0
+			&:after
+				content: '\e907'
+				font-family: icon
+				font-size: 32px
+				color: #fff
+				position: absolute
+				top: 0
+				left: 0
+				top: 50%
+				left: 50%
+				margin: -16px 0 0 -16px
+				transition: $time
+				transform: scale(1.2)
+				opacity: 0
+				z-index: 2
 
 .s-product
 	.row
@@ -1878,7 +1932,9 @@ section
 		li
 			margin-bottom: 9px
 			span
-				color: #707070
+				color: #21aa1b
+				font-weight: bold
+
 
 .product-buy
 	background: #F7EDEC
@@ -2363,5 +2419,8 @@ textarea.form-control
 			font-family: icon
 			color: $accent
 			margin-right: 5px
+
+.product-buy-text
+	margin-bottom: 20px
 
 @import "media" // Always at the end
